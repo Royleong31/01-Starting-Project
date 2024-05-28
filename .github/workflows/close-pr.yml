@@ -1,0 +1,13 @@
+name: Close PR
+on:
+  pull_request:
+    types:
+      - closed
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event data
+        run: echo "${{ toJSON(github.event) }}"
+      - name: Deploy project
+        run: echo "Deploying..."
