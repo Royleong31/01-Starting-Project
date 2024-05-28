@@ -8,13 +8,13 @@ on:
       - main # only main branch will pass this check 
       - 'dev-*' # dev-branch will pass this check
       - 'feat/**' # feat/new-feature/new will pass this check
-    push:
-      branches:
-        - main
-        - 'dev-*'
-        - 'feat/**'
-      paths-ignore: 
-        - '.github/workflows/*' # as long as the workflow is not changed, it will not trigger the workflow even if the branch is pushed
+  push:
+    branches:
+      - main
+      - 'dev-*'
+      - 'feat/**'
+    paths-ignore: 
+      - '.github/workflows/*' # as long as the workflow is not changed, it will not trigger the workflow even if the branch is pushed
 jobs:
   deploy:
     runs-on: ubuntu-latest
